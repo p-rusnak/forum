@@ -1,6 +1,6 @@
 #About
 
-###Early phase
+- Early phase
 
 Fully customizable online forum
 
