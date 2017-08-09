@@ -10,14 +10,15 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
-public class MainController {
+@RequestMapping("/api/section")
+public class SectionController {
     private SectionRepository sectionRepository;
 
-    public MainController(SectionRepository sectionRepository){ this.sectionRepository = sectionRepository; }
+    public SectionController(SectionRepository sectionRepository){ this.sectionRepository = sectionRepository; }
 
-    @GetMapping("")
-    public String getData(){
-        return "Api main route, go to /section /posts or /user";
+    @GetMapping("/all")
+    public List<Section> getAllSections(){
+        List<Section> sections = this.sectionRepository.findAll();
+        return sections;
     }
 }
